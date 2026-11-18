@@ -1,3 +1,9 @@
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
 function  mostrarMenu(){
 console.log("1 - Adicionar");
 console.log("2 - Listar");
@@ -28,6 +34,7 @@ const processar = (opcao) => {
 
 }
 
-mostrarMenu();
-processar("2");
-processar("9");
+rl.question("Escolha: ", (resposta) => {
+    processar(resposta);
+    rl.close();
+});
